@@ -1,0 +1,182 @@
+body {
+    animation: slideInDown;
+    animation-duration: 0.7s;
+}
+
+
+/* main css begin */
+
+.main-inner {
+    padding: 58px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.first-skill {
+    margin-bottom: 20px;
+}
+
+.php {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 720px;
+}
+
+.php .php-info .php-head {
+    margin: 0;
+}
+
+.php .php-img {
+    margin-right: 15px;
+}
+
+.progress .progress-first #file {
+    width: 680px;
+    height: 11px;
+    background: #222222;
+}
+
+.progress-element {
+    width: 700px;
+}
+
+.progress-container {
+    position: relative;
+    background: #222222;
+    height: 7px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: #000000;
+}
+
+.progress-container::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: #007ced;
+}
+.progress-element--phyton .progress-container::before {
+    animation: progress-phyton 2s ease-in forwards;
+}
+
+.progress-element--django .progress-container::before{
+    animation: django 2s ease-in forwards;
+}
+
+.progress-element--mysql .progress-container::before {
+    animation: progress-mysql 2s ease-in forwards;
+}
+
+.progress-element--docker .progress-container::before{
+    animation: docker 2s ease-in forwards;
+}
+
+.progress-element--ngnix .progress-container::before{
+    animation: ngnix 2s ease-in forwards;
+}
+
+@keyframes progress-phyton {
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes django {
+    to{
+        width: 90%;
+    }
+    
+}
+
+@keyframes progress-mysql {
+    to {
+        width: 80%;
+    }
+}
+
+@keyframes docker {
+
+    to{
+        width: 60%;
+    }
+}
+
+@keyframes ngnix {
+    to{
+        width: 70%;
+    }
+}
+
+.progress-label {
+    position: relative;
+}
+
+.progress-label::after {
+    position: absolute;
+    counter-reset: num var(--num);
+    content: counter(num) "%";
+    top: 0;
+    right: 0;
+}
+.progress-element--phyton .progress-label::after {
+    animation: progress-phyton-text 2s ease-in forwards;
+}
+
+.progress-element--django .progress-label::after{
+    animation: django-text 2s ease-in forwards;
+}
+
+.progress-element--mysql .progress-label::after {
+    animation: progress-mysql-text 2s ease-in forwards;
+}
+
+.progress-element--docker .progress-label::after{
+    animation: docker-text 2s ease-in forwards;
+}
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+@keyframes progress-phyton-text {
+    to {
+        --num: 80;
+    }
+}
+
+@keyframes django-text{
+    to{
+        --num:90;
+    }
+}
+
+@keyframes progress-mysql-text {
+    to {
+        --num: 80;
+    }
+}
+
+@keyframes docker-text {
+    to{
+        --num: 60;
+    }
+    
+}
+
+
+@media screen and (max-width:1120px) {
+
+    .main-inner {
+        flex-direction: column;
+    }
+
+    .main-inner .main-left{
+        flex-basis: 100%;
+    }
+    
+}
